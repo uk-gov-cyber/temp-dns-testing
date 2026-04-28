@@ -15,4 +15,6 @@ RUN apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists
 
-CMD ["fastapi", "run", "app/main.py", "--port", "80"]
+ENV WATCHFILES_FORCE_POLLING=true
+
+CMD ["fastapi", "dev", "app/main.py", "--host", "0.0.0.0", "--port", "80", "--reload-dir", "/app"]
