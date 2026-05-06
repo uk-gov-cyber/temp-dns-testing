@@ -21,6 +21,11 @@ example curl command:
 curl -X POST http://127.0.0.1:8000/jobs \
   -H "Content-Type: application/json" \
   -d '{
-    "domains": ["example.gov.uk", "service.gov.uk"]
+    "domains": ["example.gov.uk", "service.gov.uk"],
+    "record_types": ["A", "MX"]
   }'
 ```
+
+get something working with aiodns and zdns 
+do a write up on findings from dns query mechanisms in domains-api
+try locust and tracmalloc
